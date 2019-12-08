@@ -40,6 +40,8 @@ function selectionFuntion(element) {
 }
 function getIdJsonData(recipse) {
     const { name, iconUrl, nbGuests, instructions } = recipse;
+    var intruction = "";
+    intruction =` ${instructions}`;
     var display = "";
     display += `
         <div class="row text-center">
@@ -89,6 +91,7 @@ function getIdJsonData(recipse) {
     </div>
         `;
     display_result(display);
+    $("#instruction").html(intruction);
 }
 function getAllElementInRecipse(item) {
     var displayIngradiants = "";
