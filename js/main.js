@@ -3,14 +3,19 @@ function getURL() {
     var url = "https://raw.githubusercontent.com/radytrainer/test-api/master/test.json";
     return url;
 }
+
+// jQuery
 $(document).ready(function () {
+    // call function for request API
     requestdata();
+    // Select recipes with id
     $("#selection").on('change', function () {
         var chooseRecipse = $("#selection").val();
         recipesId(chooseRecipse);
     })
 });
 
+// function for query API
 function requestdata() {
     $.ajax({
         dataType: 'json',
@@ -20,7 +25,10 @@ function requestdata() {
         error: () => console.log("Cannot get data")
     })
 }
+
+//variable for store data in arrays that get from API
 var allData = [];
+// function for display the name of food on the selection option
 function getRecipse(data) {
     var option = "";
     allData = data;
@@ -29,17 +37,24 @@ function getRecipse(data) {
     });
     $("#selection").append(option);
 }
+
+// function for loop data from array variable
 function recipesId(chooseRecipse) {
     allData.forEach(item => {
         if (item.id == chooseRecipse) {
+            // choose recipses 
             chooseRecipses(item);
+            // get ingredients in recipse name
             getIngrediants(item);
+            // get number of person 
             numberOfPerson(item);
+            // get instruction
             getInstruction(item);
         }
     })
 }
 
+// choose recipses 
 function chooseRecipses(item) {
     const { name, iconUrl } = item;
     var result = "";
@@ -56,6 +71,7 @@ function chooseRecipses(item) {
     $("#result").html(result);
 }
 
+ // get number of person 
 function numberOfPerson(Guests) {
     const{nbGuests} = Guests;
     var person = "";
@@ -79,17 +95,23 @@ function numberOfPerson(Guests) {
     </div>
     <div class="col-2"></div><br><br><br>
 `;
+// diplay number of person in value input
 $("#people").html(person);
+
+// function click on icon sum
 $("#sum").on('click', function () {
     var number = parseInt($("#input").val());
     sum(number);
 })
+// function click on icon minus
 $("#minus").on('click', function () {
     var number = parseInt($("#input").val());
     minus(number);
 })
 }
-function getIngrediants(item) {
+
+ // get ingredients in recipse name
+ function getIngrediants(item) {
     var result = "";
     item.ingredients.forEach(element => {
         const { name, quantity, unit, iconUrl } = element;
@@ -104,18 +126,39 @@ function getIngrediants(item) {
     });
     $("#ingredients").html(result);
 }
-function  getInstruction(item){
-
-}
+// increase value when click on icon sum
 function sum(number) {
     var add = parseInt(number) +1;
     if(add <= 15) {
         $("#input").val(add);
+        getPerson($("#input").val());
     }
 }
+// decrease value when click on icon minus
 function minus(number) {
     var minus = parseInt(number)-1;
     if(minus >= 1) {
         $("#input").val(minus);
+        getPerson($("#input").val());
     }
+}
+
+
+// get instruction
+function getInstruction(item) {
+    const{instructions} = item;
+    var instruction = "";
+    var step = instructions.split("<step>");
+    for (let i = 1; i < step.length; i++) {
+        instruction += `
+      <h5 class="text-primary">step ${i}:</h5>
+             ${step[i]}
+        `;
+    }
+    // diplay instruction
+    $('#step').html(instruction);
+}
+
+function getPerson(person) {
+   
 }
