@@ -39,6 +39,8 @@ function getRecipse(data) {
 }
 
 // function for loop data from array variable
+var getQuanlity = [];
+var oldGuest = 0;
 function recipesId(chooseRecipse) {
     allData.forEach(item => {
         if (item.id == chooseRecipse) {
@@ -50,6 +52,10 @@ function recipesId(chooseRecipse) {
             numberOfPerson(item);
             // get instruction
             getInstruction(item);
+            // get quantity
+            getQuanlities = item;
+            //get OldGuest
+            oldGuest = item.nbGuests;
         }
     })
 }
@@ -160,5 +166,21 @@ function getInstruction(item) {
 }
 
 function getPerson(person) {
-   
+    var quantities;
+    var newQuanlity;
+    var result = "";
+    getQuanlities.ingredients.forEach(element => {
+        var {quantity,iconUrl,name,unit} = element;
+        quantities = quantity/oldGuest;
+        newQuanlity = quantities*person;
+        result += `
+        <tr>
+        <td><img src="${iconUrl}" style="width:50px"></td>
+        <td id='quantity'>${newQuanlity}</td>
+        <td>${unit[0]}</td>
+        <td>${name}</td>
+        </tr>
+    `;
+    });
+    $("#ingredients").html(result);
 }
