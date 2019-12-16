@@ -37,9 +37,9 @@ function getRecipse(data) {
     });
     $("#selection").append(option);
 }
-
-// function for loop data from array variable
+// variable for get old Guest
 var getQuanlity = [];
+// function for loop data from array variable
 var oldGuest = 0;
 function recipesId(chooseRecipse) {
     allData.forEach(item => {
@@ -60,7 +60,7 @@ function recipesId(chooseRecipse) {
     })
 }
 
-// choose recipses 
+// display name and image of recipes
 function chooseRecipses(item) {
     const { name, iconUrl } = item;
     var result = "";
@@ -101,7 +101,7 @@ function numberOfPerson(Guests) {
     </div>
     <div class="col-2"></div><br><br><br>
 `;
-// diplay number of person in value input
+// diplay number of person in input value
 $("#people").html(person);
 
 // function click on icon sum
@@ -165,6 +165,8 @@ function getInstruction(item) {
     $('#step').html(instruction);
 }
 
+
+// function for new quanlity
 function getPerson(person) {
     var quantities;
     var newQuanlity;
@@ -182,5 +184,5 @@ function getPerson(person) {
         </tr>
     `;
     });
-    $("#ingredients").html(result);
+     $("#ingredients").html(result);
 }
