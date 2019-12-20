@@ -6,42 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project JQuery </title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <script src="jQuery/jquery-3.4.1.min.js"></script>
-</head>
 
-<body>
-    <div class="container mt-5">
+    </body class="gray">
+    <br>
+    <div class="container-fluid">
+
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <select id="selection" class="form-control">
-                    <option value="" disabled selected>Choose Recipe</option>
+
+            <div class="col l4 m6"></div>
+
+            <div class="col l4 m6">
+
+                <select class="browser-default" id="selection">
+                    <!-- Select recipes -->
+                    <option disabled selected>Choose your recipes</option>
+
                 </select>
+
             </div>
-            <div class="col-4"></div>
+
+            <div class="col l4 m6"></div>
+
         </div>
+
     </div>
+    
     <hr>
-    <div class="container mt-5">
-        <div class="row" id="result">
-        </div>
-        <div class="row" id="people">
-        </div>
-        <div class="row" id="instruction">
-        </div>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-4">
-                <table id="ingredients" class="table"></table>
-            </div>
-            <div class="col-4" id="step">
-
-            </div>
-            <div class="col-2"></div>
+            <div class="col l3 m6 center" id="img-recipes"></div>
+            <div class="col l3 m6 center" id="number_people"></div>
+            <div class="col l3 m6" id="ingredients"></div>
+            <div class="col l3 m6 " id="step"></div>
         </div>
-    </div>
-    <script src="js/main.js"></script>
-</body>
 
-</html>
+    </div>
+
+    <script src="js/main.js"></script>
+
+</html
