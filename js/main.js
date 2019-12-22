@@ -13,10 +13,9 @@ $(document).ready(function () {
     $("#selection").on('change', function () {
         var chooseRecipse = $("#selection").val();
         recipesId(chooseRecipse);
+        display()
     })
 });
-
-
 // function for query API
 function requestdata() {
     $.ajax({
@@ -126,7 +125,7 @@ function getIngrediants(item) {
            </table>
         `;
     });
-    $("#ingredients").html(result);
+    $("#ingredients").html("<h5 class='center'>Ingredients</h5>" + result);
 }
 // increase value when click on icon sum
 function sum(number) {
@@ -155,12 +154,14 @@ function getInstruction(item) {
     var step = instructions.split("<step>");
     for (let i = 1; i < step.length; i++) {
         instruction += `
-      <h5 class="blue-text">step ${i}:</h5>
-             ${step[i]}
+        <div class="card gray center card-hover">
+            <h5 class="blue-text">step ${i}:</h5>
+            ${step[i]}
+        </div>
         `;
     }
     // diplay instruction
-    $('#step').html(instruction);
+    $('#step').html("<h5 class='center'>Instruction</h5>" + instruction);
 }
 
 
@@ -184,7 +185,6 @@ function getPerson(person) {
         </table>
     `;
     });
-    $("#ingredients").html(result);
+    // $("#ingredients").html();
+    $("#ingredients").html("<h5 class='center'>Ingredients</h5>" + result);
 }
-
-
