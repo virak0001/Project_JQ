@@ -79,7 +79,7 @@ function chooseRecipses(item) {
     var result = "";
     result += `
         <h5 class="text-center mt-5">${name}</h5><br>
-        <img src="${iconUrl}" style="width:280px; height:250px; border-radius:50%">
+        <img src="${iconUrl}" class="responsive-img" style="width:280px; height:250px; border-radius:50%">
     `;
     $("#img-recipes").html(result);
 }
@@ -90,9 +90,9 @@ function numberOfPerson(Guests) {
     var person = "";
     person += `
         <h5>Number of Person</h5>
-        <button id="minus" class="waves-effect waves-light btn" type="button">-</button>
-        <input  id="input" style="width:115px" class="center" value="${nbGuests}" disabled type="text">
-        <button type="button" id="sum" class="waves-effect waves-light btn">+</button>
+        <button id="minus" class="waves-effect waves-light btn"  type="button">-</button>
+        <input  id="input"  class="center" value="${nbGuests}" disabled type="text">
+        <button type="button" id="sum" class="waves-effect waves-light btn" >+</button>
 `;
     // diplay number of person in input value
     $("#number_people").html(person);
@@ -109,7 +109,7 @@ function numberOfPerson(Guests) {
     })
 }
 
-// get ingredients in recipse name
+// get ingredients
 function getIngrediants(item) {
     var result = "";
     item.ingredients.forEach(element => {
@@ -155,7 +155,7 @@ function getInstruction(item) {
     for (let i = 1; i < step.length; i++) {
         instruction += `
         <div class="card gray center card-hover">
-            <h5 class="blue-text">step ${i}:</h5>
+            <h6 class="blue-text">step ${i}:</h6>
             ${step[i]}
         </div>
         `;

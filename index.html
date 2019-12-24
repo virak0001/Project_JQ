@@ -12,7 +12,8 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
     <script src="jQuery/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 
@@ -22,19 +23,20 @@
 
         <div class="row ">
 
-            <div class="col l4 m6"></div>
+            <div class="col s12 m12 l4 "></div>
 
-            <div class="col l4 m6">
-
+            <div class="col s12 m12 l4">
+                <h4 class="center font">Recipse</h4>
                 <select class="browser-default" id="selection">
                     <!-- Select recipes -->
+                  
                     <option disabled selected>Choose your recipes</option>
 
                 </select>
 
             </div>
 
-            <div class="col l4 m6"></div>
+            <div class="col s12 m12 l4"></div>
 
         </div>
 
@@ -43,10 +45,22 @@
     <hr>
     <div class="container-fluid">
         <div class="row">
-            <div class="col l3 m6 center" id="img-recipes"></div>
-            <div class="col l3 m6 center" id="number_people"></div>
-            <div class="col l3 m6" id="ingredients"></div>
-            <div class="col l3 m6 " id="step"></div>
+            <div class="col s12  l3  center" >
+                <div class="card " id="img-recipes" ></div>
+            </div>
+            <div class="col s12  l3  center" >
+                <div class="card" id="number_people"></div>
+            </div>
+            <div class="col s12  l3  " >
+                <div class="card" id="ingredients">
+
+                </div>
+            </div>
+            <div class="col s12  l3  " >
+                <div class="card" id="step">
+
+                </div>
+            </div>
         </div>
 
     </div>

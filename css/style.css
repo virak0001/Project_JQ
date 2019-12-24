@@ -1,7 +1,35 @@
 body {
     background-color: rgb(196, 223, 223);
-    /* background-image: url("https://cdn.mos.cms.futurecdn.net/kiUBcMbnqPuXk9Ahr7CYKJ.jpg"); */
+    background-image: url("https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+
 }
+
 .centers {
     justify-content: center;
+}
+
+#input {
+    width: 115px;
+    font-size: 24px;
+}
+
+#sum,
+#minus {
+    width: 60px;
+    font-size: 40px;
+}
+h5{
+    font-family: 'Kaushan Script', cursive;
+    color: red;
+    font-size: 27px;
+    background-color: rgb(229, 229, 235);
+    padding: 7px 0px 7px 0px;
+}
+h6 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+}
+.font {
+    font-family: 'Kaushan Script', cursive;
+    color: red;
 }
